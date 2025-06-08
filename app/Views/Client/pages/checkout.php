@@ -401,7 +401,7 @@ class CheckoutPage {
             <tr class="table_row" data-product-id="${item.productID}">
                 <td class="column-1">
                     <div class="how-itemcart1">
-                        <img src="${window.OneStoreClient.url('/uploads/')}${item.image_path || 'placeholder.jpg'}" alt="${item.name}">
+                        <img src="${window.OneStoreClient.url('/public/uploads/')}${item.image_path || 'placeholder.jpg'}" alt="${item.name}">
                     </div>
                 </td>
                 <td class="column-2">${item.name}</td>

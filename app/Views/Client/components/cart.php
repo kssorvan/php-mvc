@@ -103,7 +103,7 @@ class HeaderCart {
         itemsContainer.innerHTML = items.map(item => `
             <li class="header-cart-item flex-w flex-t m-b-12" data-product-id="${item.product_id || item.productID}">
                 <div class="header-cart-item-img">
-                    <img src="${window.OneStoreClient.url('/uploads/')}${item.image_path || item.image || 'placeholder.jpg'}" alt="${item.name || item.productName}" style="width: 60px; height: 60px; object-fit: cover;">
+                    <img src="${window.OneStoreClient.url('/public/uploads/')}${item.image_path || item.image || 'placeholder.jpg'}" alt="${item.name || item.productName}" style="width: 60px; height: 60px; object-fit: cover;">
                 </div>
 
                 <div class="header-cart-item-txt p-t-8 flex-grow-1">
