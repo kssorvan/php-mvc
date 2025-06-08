@@ -1,0 +1,32 @@
+# Configuration & Database
+config/database.php
+.env
+
+# User Uploads
+public/uploads/products/*
+public/uploads/slider/*
+public/uploads/brands/*
+public/uploads/categories/*
+!public/uploads/*/.gitkeep
+
+# PHP Files
+error_log
+php_errors.log
+*.log
+sessions/
+cache/
+
+# Development
+php-dev.ini
+.vscode/
+.idea/
+
+# System Files
+.DS_Store
+Thumbs.db
+*.tmp
+*.bak
+
+# Dependencies
+
+node_modules/

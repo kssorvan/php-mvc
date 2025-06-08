@@ -1,0 +1,48 @@
+RewriteEngine On
+# Prevent access to admin directory
+RewriteCond %{REQUEST_URI} ^/admin(/.*)?$ [NC]
+RewriteCond %{REQUEST_URI} !^/onestore/admin [NC]
+RewriteRule ^admin(/.*)?$ - [R=404,L]
+# Prevent access to sensitive files
+<Files "*.sql">
+    Order allow,deny
+    Deny from all
+</Files>
+
+<Files "setup.php">
+    Order allow,deny
+    Deny from all
+</Files>
+
+<Files "check_db.php">
+    Order allow,deny
+    Deny from all
+</Files>
+
+<Files "add_sample_data.php">
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Clean URLs - Route everything through index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [QSA,L]
+
+# Security headers
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options nosniff
+    Header always set X-Frame-Options DENY
+    Header always set X-XSS-Protection "1; mode=block"
+</IfModule>
+
+# Prevent directory browsing
+Options -Indexes
+
+# File upload security
+<FilesMatch "\.(php|php3|php4|php5|phtml)$">
+    <Location "~/uploads/">
+        Order allow,deny
+        Deny from all
+    </Location>
+</FilesMatch> 
