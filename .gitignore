@@ -3,11 +3,7 @@ config/database.php
 .env
 
 # User Uploads
-public/uploads/products/*
-public/uploads/slider/*
-public/uploads/brands/*
-public/uploads/categories/*
-!public/uploads/*/.gitkeep
+
 
 # PHP Files
 error_log
