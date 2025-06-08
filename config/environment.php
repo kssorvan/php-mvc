@@ -14,10 +14,10 @@ function detectEnvironment() {
     $httpHost = $_SERVER['HTTP_HOST'] ?? '';
     
     // EC2 production indicators
-    if ($serverIP === '54.179.0.116' || 
-        $serverName === '54.179.0.116' || 
-        $httpHost === '54.179.0.116' ||
-        strpos($httpHost, '54.179.0.116') !== false) {
+    if ($serverIP === '172-31-0-67' || 
+        $serverName === '172-31-0-67' || 
+        $httpHost === '172-31-0-67' ||
+        strpos($httpHost, '172-31-0-67') !== false) {
         return 'production';
     }
     
